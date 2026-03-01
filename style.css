@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    font-family: 'Press Start 2P', cursive;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #4ec0ca 0%, #4ec0ca 80%, #ded895 80%, #ded895 100%);
+    /* Quick fallback background */
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Let clicks pass through to canvas/game mostly, but enable for buttons */
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-shadow: 2px 2px #000;
+    pointer-events: auto;
+    transition: opacity 0.3s;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #f4b41b;
+    -webkit-text-stroke: 1px #fff;
+}
+
+p {
+    font-size: 10px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    background: #e95c24;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #9e3e18;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #9e3e18;
+}
+
+
+#score-display {
+    position: absolute;
+    top: 15%;
+    /* Moved down from 10% to accommodate ad */
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 0 #000;
+    z-index: 10;
+}
+
+.score-card {
+    background: #ded895;
+    border: 2px solid #543847;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    color: #e86101;
+    text-shadow: none;
+    width: 60%;
+    text-align: center;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.score-card p {
+    font-size: 12px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
